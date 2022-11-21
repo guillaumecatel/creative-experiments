@@ -10,7 +10,7 @@
     "preinstall": "npx -y only-allow pnpm",
     "build": "build-storybook",
     "dev": "start-storybook -p 6006",
-    "deploy": "gh-pages -d storybook-static",
+    "deploy:storybook": "gh-pages -d storybook-static",
     "lint": "pnpm eslint && pnpm stylelint",
     "lint:fix": "pnpm eslint --fix && pnpm stylelint --fix",
     "eslint": "eslint .",
@@ -20,9 +20,7 @@
     "cz": "git-cz",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:security": "pnpm audit --audit-level=high",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "ci:security": "pnpm audit --audit-level=high"
   },
   "dependencies": {
     "@react-three/drei": "^9.42.1",
