@@ -20,7 +20,6 @@
     "cz": "git-cz",
     "changeset": "changeset",
     "ci:version": "changeset version",
-    "ci:release": "changeset publish",
     "ci:security": "pnpm audit --audit-level=high",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
