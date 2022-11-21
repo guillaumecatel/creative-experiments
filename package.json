@@ -1,0 +1,107 @@
+{
+  "name": "creative-experiments",
+  "description": "🎨 Creative experiments with Three.js and P5.js.",
+  "author": "Guillaume CATEL <hello@guillaumecatel.com> (https://guillaumecatel.com)",
+  "license": "MIT",
+  "private": true,
+  "homepage": "http://guillaumecatel.github.io/creative-experiments",
+  "scripts": {
+    "prepare": "husky install",
+    "preinstall": "npx -y only-allow pnpm",
+    "build": "build-storybook",
+    "dev": "start-storybook -p 6006",
+    "deploy": "gh-pages -d storybook-static",
+    "lint": "pnpm eslint && pnpm stylelint",
+    "lint:fix": "pnpm eslint --fix && pnpm stylelint --fix",
+    "eslint": "eslint .",
+    "eslint:fix": "pnpm eslint . --fix",
+    "stylelint": "stylelint '**/*.{css,scss}' --aei",
+    "stylelint:fix": "pnpm stylelint --fix",
+    "cz": "git-cz",
+    "changeset": "changeset",
+    "ci:version": "changeset version",
+    "ci:release": "changeset publish",
+    "ci:security": "pnpm audit --audit-level=high",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.42.1",
+    "@react-three/fiber": "^8.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.146.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@changesets/cli": "^2.25.2",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/cz-commitlint": "^17.2.0",
+    "@guillaumecatel/commitlint-config": "^0.1.1",
+    "@guillaumecatel/eslint-config": "^0.1.1",
+    "@guillaumecatel/eslint-config-react": "^0.1.1",
+    "@guillaumecatel/prettier-config": "^0.1.1",
+    "@guillaumecatel/stylelint-config": "^0.1.1",
+    "@guillaumecatel/stylelint-config-scss": "^0.1.1",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/three": "^0.146.0",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
+    "commitizen": "^4.2.5",
+    "eslint": "^8.28.0",
+    "eslint-plugin-storybook": "^0.6.7",
+    "gh-pages": "^4.0.0",
+    "husky": "^8.0.2",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.15.0",
+    "typescript": "^4.9.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "engines": {
+    "node": ">= 16.1.0",
+    "pnpm": ">= 6.9.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/core",
+        "babel-loader",
+        "inquirer",
+        "webpack"
+      ],
+      "allowedVersions": {
+        "react": "18",
+        "react-dom": "18"
+      }
+    },
+    "overrides": {
+      "trim@<0.0.3": ">=0.0.3",
+      "minimist@<=1.2.5": ">=1.2.6",
+      "glob-parent@<5.1.2": ">=5.1.2"
+    }
+  },
+  "version": "1.0.0",
+  "main": ".commitlintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillaumecatel/creative-experiments.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guillaumecatel/creative-experiments/issues"
+  }
+}
