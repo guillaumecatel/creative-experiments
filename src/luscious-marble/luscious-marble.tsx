@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { DoubleSide, ShaderMaterial } from 'three'
+import { DoubleSide, Mesh, ShaderMaterial } from 'three'
 
 const vertexShader = /* glsl */ `
 
