@@ -133,5 +133,5 @@ jobs:
 
       - name: deploy storybook on Github pages
         run: |
-          pnpm build
+          pnpm build:storybook
           pnpm deploy:storybook
