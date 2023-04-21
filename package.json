@@ -36,6 +36,7 @@
     "p5": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "shader-park-core": "^0.1.38",
     "three": "^0.151.3"
   },
   "devDependencies": {
