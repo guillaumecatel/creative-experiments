@@ -36,7 +36,7 @@ const Scene = ({ scale }: Props) => {
 
   useFrame(() => {
     if (el.current) {
-      el.current.material.uniforms.time.value += 0.025
+      el.current.material.uniforms.time.value += 0.075
       el.current.material.uniforms.scale.value = scale
     }
   })
