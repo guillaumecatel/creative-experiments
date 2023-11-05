@@ -43,7 +43,7 @@ const Tapioca = ({ scale = 5 }: Props) => {
       </Canvas>
       <div
         style={{
-          opacity: 0.7,
+          opacity: 0.2,
           width: '100%',
           height: '100%',
           position: 'absolute',
