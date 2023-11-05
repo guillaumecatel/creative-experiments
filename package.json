@@ -15,7 +15,7 @@
   "scripts": {
     "prepare": "husky install",
     "preinstall": "npx -y only-allow pnpm",
-    "dev": "start-storybook -p 6006",
+    "dev": "storybook dev -p 6006",
     "deploy:storybook": "gh-pages -d storybook-static",
     "lint": "pnpm eslint && pnpm stylelint",
     "lint:fix": "pnpm eslint --fix && pnpm stylelint --fix",
