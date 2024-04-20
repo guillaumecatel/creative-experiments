@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 overrides:
   trim@<0.0.3: '>=0.0.3'
   minimist@<=1.2.5: '>=1.2.6'
@@ -26,8 +30,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   shader-park-core:
-    specifier: ^0.1.38
-    version: 0.1.38
+    specifier: ^0.1.41
+    version: 0.1.41
   three:
     specifier: ^0.151.3
     version: 0.151.3
@@ -10038,8 +10042,8 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
-  /shader-park-core@0.1.38:
-    resolution: {integrity: sha512-Jesjjle1Djs9PzZ1L0122ngIuw5vIY2ZoUlpbtQDQINuaePFGRP60iiopICFeY2eeb0pZAGjCGRXR6FdWTv2uQ==}
+  /shader-park-core@0.1.41:
+    resolution: {integrity: sha512-npWc9TfZtrypvRQiF0dkKUUpBtmLHkv23m5cV6eM7xSoX0LzQ99xk+5l09LleKwqxyHiVZ+Y38epEyInXsZDIg==}
     dependencies:
       '@shaderfrog/glsl-parser': 0.2.4
       escodegen: 1.14.3
