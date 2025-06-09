@@ -1,24 +1,19 @@
 {
   "npm.packageManager": "pnpm",
-  "stylelint.packageManager": "pnpm",
-  "eslint.packageManager": "pnpm",
-  "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
   },
-  "cSpell.words": [
-    "npm",
-    "pnpm",
-    "changesets",
-    "commitlint",
-    "stylelint",
-    "tailwindcss",
-    "multilines",
-    "react",
-    "reactjs",
-    "vite",
-    "vitejs"
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
   ],
+  "prettier.documentSelectors": ["**/*.svg"]
 }
