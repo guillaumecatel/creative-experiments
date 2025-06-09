@@ -79,4 +79,4 @@ jobs:
         run: pnpm build
 
       - name: 🪂 Deploy
-        run: pnpm deploy
+        run: pnpm run deploy
