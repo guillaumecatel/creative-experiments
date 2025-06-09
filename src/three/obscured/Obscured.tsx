@@ -1,24 +1,38 @@
 import { useFrame } from '@react-three/fiber'
-import { useRef } from 'react'
-import { BoxGeometry, Mesh, ShaderMaterial } from 'three'
+import { useMemo, useRef } from 'react'
+import { BackSide, ShaderMaterial } from 'three'
 
-import sculpture from './Obscured.sculpture'
+import { uniformDescriptionToThreeJSFormat } from '../../utils'
 
-const mesh: Mesh = sculpture
+import generated from './Obscured.sp'
 
 const Scene = () => {
-  const el = useRef<Mesh<BoxGeometry, ShaderMaterial>>(null)
+  const material = useRef<ShaderMaterial>(null)
+
+  const uniforms = useMemo(
+    () => uniformDescriptionToThreeJSFormat(generated.uniforms),
+    [],
+  )
 
   useFrame(() => {
-    if (el.current) {
-      el.current.material.uniforms.time.value += 0.1
+    if (material.current) {
+      material.current.uniforms.time.value += 0.01
     }
   })
 
   return (
     <>
-      <color args={['#000000']} attach='background' />
-      <primitive object={mesh} ref={el} />
+      <mesh>
+        <sphereGeometry args={[12, 12, 12]} />
+        <shaderMaterial
+          fragmentShader={generated.frag}
+          ref={material}
+          transparent={true}
+          side={BackSide}
+          uniforms={uniforms}
+          vertexShader={generated.vert}
+        />
+      </mesh>
     </>
   )
 }

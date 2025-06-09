@@ -1,8 +1,4 @@
-/* eslint-disable no-undef */
-import { sculptToThreeJSMesh } from 'shader-park-core'
-
-export default sculptToThreeJSMesh(() => {
-  let strength = input(0.4, 0, 3)
+let strength = input(0.4, 0, 3)
   let twistMix = input()
 
   setStepSize(0.3)
@@ -26,4 +22,3 @@ export default sculptToThreeJSMesh(() => {
 
     return 0.5 + 0.5 * cos(time + vec3(s.x, s.y, s.x) + vec3(0, 2, 4))
   }
-})
