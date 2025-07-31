@@ -133,10 +133,14 @@ export const sketch = function (p: p5) {
           const noiseOffset =
             p.noise(newX / p.width, newY / p.height) * this.noiseFactor
           // Nouvelle position x calculée en fonction de la direction et du bruit
-          newX = (newX + p.cos(heading + noiseOffset) + p.width) % p.width
+          newX = (newX + p.cos(item.heading + noiseOffset) + p.width) % p.width
           // Nouvelle position y calculée en fonction de la direction et du bruit
-          newY = (newY + p.sin(heading + noiseOffset) + p.height) % p.height
-        } while (p.floor(newX) === p.floor(x) && p.floor(newY) === p.floor(y))
+          newY =
+            (newY + p.sin(item.heading + noiseOffset) + p.height) % p.height
+        } while (
+          p.floor(newX) === p.floor(item.x) &&
+          p.floor(newY) === p.floor(item.y)
+        )
 
         // Ignore cette position si elle a déjà été visitée
         if (this.flowField.hasBeenVisited(newX, newY)) {
@@ -144,7 +148,7 @@ export const sketch = function (p: p5) {
         }
 
         // Ajoute la nouvelle position à la pile
-        this.stack.push({ x: newX, y: newY, heading })
+        this.stack.push({ x: newX, y: newY, heading: item.heading })
         // Marque cette position comme visitée
         this.flowField.set(newX, newY)
       }
