@@ -118,15 +118,15 @@ export const sketch = function (p: p5) {
       }
 
       // Récupère la dernière position et direction
-      let { x, y, heading } = this.stack.pop()
+      const item = this.stack.pop()
 
       // Détermine le nombre de branches à créer (1 ou 2 selon la probabilité de branchFactor)
       const numBranches = p.random() < this.branchFactor ? 2 : 1
 
-      for (let i = 0; i < numBranches; i++, heading += p.PI / 2) {
+      for (let i = 0; i < numBranches; i++, item.heading += p.PI / 2) {
         // Position x et y temporaires
-        let newX = x
-        let newY = y
+        let newX = item.x
+        let newY = item.y
 
         do {
           // Calcul du décalage basé sur le bruit Perlin
@@ -158,6 +158,7 @@ export const sketch = function (p: p5) {
     return COLORS[p.int(p.random(COLORS.length))]
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
